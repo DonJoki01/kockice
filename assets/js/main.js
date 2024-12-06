@@ -1,4 +1,3 @@
-    //ispisivanje menija
   const clanoviMenija = [
     { putanja: "index.html", ikonica: "fa-house", tekst: "Početna" },
     { putanja: "igre.html", ikonica: "fa-dungeon", tekst: "Igre" },
@@ -48,8 +47,6 @@
   }
   meni.innerHTML = sadrzajMenija;
   
-  //ispisivanje footera
-  //footer meni
   let futer = document.querySelector("footer")
   futer.innerHTML=`       <div class="row">
           <div class="col-6 col-md-2 mb-3">
@@ -122,7 +119,6 @@
               </li>`}
   footerMeni.innerHTML=footerMeniSadrzaj
 
-    //footer dodatni linkovi
     let dodatniLinkovi = document.querySelector("#dodatniLinkovi")
     let footerDodatniSadrzaj= ''
     for (const clan of clanoviDodatniSadrzaj){
@@ -130,8 +126,6 @@
                     <a href="${clan.putanja}" class="nav-link p-0 text-muted">${clan.tekst}</a>
                   </li>`}
     dodatniLinkovi.innerHTML = footerDodatniSadrzaj
-    
-    //SCROLL DUGME
 
     $(window).scroll(function() {
       if ($(this).scrollTop() > 500) {

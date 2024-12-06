@@ -1,5 +1,3 @@
-//ova animacija je trebalo da bude jquery ali je pravljena u momentu kada nisam znao ni sta jquery radi a ne kako se koristi hvala na razumevanju polomio sam se da napravim <3
-
 const proizvodi = [
   { ime: "Cyclades", zanr: "Fantazija", cena: "6,000", img: "cyclades.png" },
   { ime: "Jednorozi", zanr: "Strategija", cena: "2,600", img: "jednorozi.png" },
@@ -37,11 +35,10 @@ const zanroviNiz = [
   { ime: "Trivija", id: "trivija" },
 ];
 
-let igre = document.querySelector("#igre"); // Element gde se prikazuju igre
-let zanrovi = document.querySelector("#zanrovi"); // Element gde se prikazuju žanrovi
+let igre = document.querySelector("#igre");
+let zanrovi = document.querySelector("#zanrovi"); 
 let pretraga = document.getElementById("pretraga");
 
-// Generisanje početnog sadržaja svih igara
 let sadrzajIgre = "";
 for (const proizvod of proizvodi) {
   sadrzajIgre += `<div class="col-xxl-3 col-lg-4  col-sm-6 mx-auto drzacDodavanje">
@@ -69,8 +66,6 @@ for (const proizvod of proizvodi) {
                     <span class="dodavanjeKorpa rounded-pill">Proizvod je uspešno dodat u korpu</span>
                   </div>`;
 }
-
-// Prikazivanje igara
 igre.innerHTML = sadrzajIgre;
 function potvrdaDodavanja(){
   $(document).ready(function () {
@@ -85,7 +80,7 @@ function potvrdaDodavanja(){
   });
 }
 potvrdaDodavanja()
-// Generisanje liste žanrova
+
 let zanroviSadrzaj = `<li class="list-group-item"><h3 class="fs-4">Žanr</h3></li>`;
 for (const zanr of zanroviNiz) {
   zanroviSadrzaj += `<li class="list-group-item">
@@ -95,10 +90,7 @@ for (const zanr of zanroviNiz) {
 }
 zanrovi.innerHTML = zanroviSadrzaj;
 
-// Prikupiti sve čekboksove za žanrove
 let zanrCheckbox = document.querySelectorAll(".zanr");
-
-// Funkcija za primenu filtera (pretraga + žanrovi)
 function primeniFiltere() {
   let searchText = pretraga.value.toLowerCase();
 
@@ -146,12 +138,10 @@ function primeniFiltere() {
     filtriraniProizvodi.length > 0
       ? sadrzajFiltriraneIgre
       : '<h3 class="mt-3">Nema proizvoda koji odgovaraju kriterijumima.</h3>';
-
-  dodajEventeNaKartice(); // Ponovo povežite događaje
+  dodajEventeNaKartice(); 
   potvrdaDodavanja()
 }
 
-// Dodavanje event listenera za pretragu i čekboksove
 pretraga.addEventListener("input", primeniFiltere);
 zanrCheckbox.forEach((checkbox) => {
   checkbox.addEventListener("change", primeniFiltere);
@@ -163,44 +153,41 @@ karticaNiz.forEach((kartica) => {
   kartica.addEventListener("mouseenter", function () {
     let indexKartice = Array.from(karticaNiz).indexOf(kartica);
     let computedStyle = window.getComputedStyle(pomerajuciTekst[indexKartice]);
-    let matrix = new DOMMatrix(computedStyle.transform); // Čitanje trenutne transformacije
-
-    // Uzmi trenutnu Y poziciju iz transform matrice
-    let trenutnaY = matrix.m42; // m42 je translacija po Y osi
+    let matrix = new DOMMatrix(computedStyle.transform);
+    
+    let trenutnaY = matrix.m42; 
     pomerajuciTekst[indexKartice].animate(
       [
-        { transform: `translateY(${trenutnaY}px)` }, // Početna pozicija
-        { transform: "translateY(-90%)" }, // Krajnja pozicija
+        { transform: `translateY(${trenutnaY}px)` }, 
+        { transform: "translateY(-90%)" }, 
       ],
       {
-        duration: 700, // Trajanje animacije u milisekundama
-        iterations: 1, // Izvodi se samo jednom
-        fill: "forwards", // Zadržava krajnje stanje
+        duration: 700, 
+        iterations: 1, 
+        fill: "forwards", 
       }
     );
   });
 
   kartica.addEventListener("mouseleave", function () {
-    // Prvo dohvati index kartice
+
     let indexKartice = Array.from(karticaNiz).indexOf(kartica);
 
-    // Dohvati trenutnu poziciju pomoću `getComputedStyle`
     let computedStyle = window.getComputedStyle(pomerajuciTekst[indexKartice]);
-    let matrix = new DOMMatrix(computedStyle.transform); // Čitanje trenutne transformacije
+    let matrix = new DOMMatrix(computedStyle.transform); 
 
-    // Uzmi trenutnu Y poziciju iz transform matrice
-    let trenutnaY = matrix.m42; // m42 je translacija po Y osi
+    let trenutnaY = matrix.m42; 
 
-    // Animiraj element
+
     pomerajuciTekst[indexKartice].animate(
       [
-        { transform: `translateY(${trenutnaY}px)` }, // Trenutna pozicija
-        { transform: "translateY(0)" }, // Povratak na početak
+        { transform: `translateY(${trenutnaY}px)` }, 
+        { transform: "translateY(0)" }, 
       ],
       {
-        duration: 700, // Trajanje cele animacije
-        iterations: 1, // Izvodi se samo jednom
-        fill: "forwards", // Zadržavanje krajnjeg stanja
+        duration: 700, 
+        iterations: 1, 
+        fill: "forwards",
       }
     );
   });
@@ -209,9 +196,9 @@ karticaNiz.forEach((kartica) => {
 function dodajEventeNaKartice() {
   karticaNiz = document.querySelectorAll(".karticaDodaj");
   pomerajuciTekst = document.querySelectorAll(".tekst");
-  dodajGrupa = document.querySelectorAll(".dodaj"); // Ponovo selektujte dugmiće
+  dodajGrupa = document.querySelectorAll(".dodaj"); 
 
-  // Dodavanje event listenera za animacije (već definisano)
+ 
   karticaNiz.forEach((kartica, index) => {
     kartica.addEventListener("mouseenter", function () {
       let computedStyle = window.getComputedStyle(pomerajuciTekst[index]);
@@ -249,7 +236,6 @@ function dodajEventeNaKartice() {
     });
   });
   
-  // Dodavanje event listenera na dugmiće za dodavanje u korpu
   dodajGrupa.forEach((dodaj) => {
     dodaj.addEventListener("click", function () {
       let imeProizvoda = dodaj.parentNode.parentNode.querySelector("h5").textContent;
@@ -269,7 +255,7 @@ function dodajEventeNaKartice() {
         }
       }
   
-      osveziKorpu(); // Osvežavanje korpe nakon dodavanja proizvoda
+      osveziKorpu(); 
     });
   });
 }
@@ -281,7 +267,7 @@ let ukupnaCena = document.querySelector("#ukupnaCena");
 let ukupnaCenaSadrzaj = 0;
 let ukupno = document.querySelector("#ukupno");
 
-// Funkcija za osvežavanje sadržaja korpe
+
 function osveziKorpu() {
   korpaSadrzaj = '';
   proizvodiUKorpi.forEach((proizvod, index) => {
@@ -293,7 +279,6 @@ function osveziKorpu() {
   });
   korpa.innerHTML = korpaSadrzaj;
 
-  // Ponovno dodavanje event listenera za "Obriši" dugmiće
   let obrisiDugmici = document.querySelectorAll(".obrisi");
   obrisiDugmici.forEach((dugme) => {
     
@@ -304,13 +289,10 @@ function osveziKorpu() {
   });
 }
 
-// Funkcija za uklanjanje proizvoda iz korpe
 function ukloniIzKorpe(index) {
   let uklonjenaCena = proizvodiUKorpi[index].cenaKaoInt;
   proizvodiUKorpi.splice(index, 1);
   ukupnaCenaSadrzaj -= uklonjenaCena;
-  
-  // Osvežavanje prikaza
   
   osveziKorpu();
    ukupno.innerText = proizvodiUKorpi.length > 0 ? "Ukupno" : "Korpa je trenutno prazna";
@@ -320,7 +302,7 @@ function ukloniIzKorpe(index) {
    }
 }
 
-// Dodavanje proizvoda u korpu
+
 dodajGrupa.forEach((dodaj) => {
   dodaj.addEventListener("click", function () {
     let imeProizvoda = dodaj.parentNode.parentNode.querySelector("h5").textContent;
@@ -338,7 +320,7 @@ dodajGrupa.forEach((dodaj) => {
         break;
       }
     }
-    osveziKorpu(); // Osvežavanje korpe nakon dodavanja proizvoda
+    osveziKorpu(); 
     
   });
 });
@@ -463,8 +445,6 @@ paketomat.addEventListener("change", function(){
   }
   })
 })
-
-
                 
 let kucaForma=document.getElementById("kucaForma")
 const kucaRadio = document.getElementById("kuca")

@@ -65,9 +65,6 @@ body{
 .text-success-emphasis{
     color: #58151c;
 }
-/* .card-body{
-    padding-bottom: 0.3rem;
-} */
 .karticaDodaj{
     overflow: hidden;
 }
@@ -228,7 +225,6 @@ body{
         padding: 1rem 0;
     }
 }
-    /******Scroll Button Code*******/
 
 .scrollup {
     width: 50px;
