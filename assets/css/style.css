@@ -1,0 +1,251 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+ul{
+list-style-type: none;
+}
+
+body{
+    overflow-x: hidden;
+}
+ .active {
+    color: rgba(0, 0, 0, .65);
+} 
+
+.carousel-indicators [data-bs-target] {
+    background-color: #0a3622;
+}
+.visina{
+    height: 60vh;
+}
+.pozadina{
+    background-color: #eeeeee;
+}
+.tekst{
+    height: 65px;
+    line-height: 0.5;
+    background-color: white;
+    transition-duration: 1s;
+    
+}
+@keyframes moveUp {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-90%);
+    }
+  }
+  @keyframes moveDown{
+    from {
+      transform: translateY(-90%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+.navbar{
+    background-color: white;
+}
+.cenaParagraf{
+    padding-top: 0.375rem;
+}
+.btn-dark{
+    margin-top: 10px;
+}
+.btn-reset{
+    margin: 0;
+}
+.btn-dark:hover{
+    background-color: #58151c;
+}
+.text-success-emphasis{
+    color: #58151c;
+}
+/* .card-body{
+    padding-bottom: 0.3rem;
+} */
+.karticaDodaj{
+    overflow: hidden;
+}
+.karticaIzbor{
+    background-color: #eeeeee;
+}
+.karticaIzborBela{
+    background-color: white;
+}
+.zelena{
+    color: #58151c;
+}
+.zelenapozadina{
+    background-color: #0a3622;
+    color: white;
+}
+.zeleniokvir{
+    border: 1px solid #0a3622;
+}
+.crveniokvir{
+    border: 1px solid #58151c;
+}
+.slikaKockice{
+    height: 800px;
+    background-image: url(img/pexels-lil-artsy-1111597.jpg);
+    background-position: fixed;
+}
+.blok-zasto{
+    background-color: #0a3622;
+    padding: 0;
+}
+.boja{
+    color: white;
+    padding: 0;
+}
+.prvi{
+    background-image: url(img/bang.jpg);
+    height: 70vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.drugi{
+    background-image: url(img/dixit.jpg);
+    height: 34vh;
+}
+.treci{
+    background-image: url(img/prst.jpg);
+    height: 34vh;
+    background-repeat: no-repeat;
+}
+.visina-trending{
+    height: 34vh;
+}
+.cetvrti{
+    background-image: url(img/sagrada.jpg);
+    background-size: cover;
+}
+.mesto{
+    height: 100%;
+    width: 100%;
+}
+#cena{
+    border:1px solid black ;
+}
+.maliRSD{
+    font-size: 0.6rem;
+    color:#333333;
+}
+.relativniLI{
+    position:relative;
+}
+.obrisi{
+    position:absolute;
+    bottom:2px;
+    right:2px;
+    border:none;
+    background-color: transparent;
+    color:#58151c;
+    font-size: 0.7rem;
+}
+.bojaZaA:hover{
+    color:#155826;
+}
+.bojaZaA{
+    color: rgba(0, 0, 0, .55);
+}
+.pozadinaForma{
+    background-color: #f5f5f5;
+}
+#platite{
+    margin-top: 0;
+}
+#platiteLabel{
+    color: #f5f5f5;
+}
+.greska{
+    color: #e21025;
+}
+.nevidljiv{
+    display:none;
+}
+.readMore{
+    cursor: pointer;
+    color: #58151c;
+}
+#igreRoditelj{
+    position: relative;
+}
+#igreRoditelj>p:first-child{
+    z-index: 2;
+    position:fixed;
+    top:80dvh;
+    left:50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+.drzacDodavanje{
+    position: relative;
+}
+.dodavanjeKorpa{
+    display: none;
+    z-index: 2;
+    position: absolute;
+    bottom:-20px;
+    left: 50%;
+    transform: translate(-50%);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding:0.5rem;
+    background-color:#333333 ;
+    color: white;
+    clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+    opacity: 80%;
+}
+@media (max-width:991px){
+    .section-title{
+        margin-top: 1rem;
+    }
+}
+@media (max-width:600px) and (min-width:500px){
+    .visina{
+        height: 55vh;
+    }
+    }
+@media (max-width:500px) and (min-width:400px){
+    .visina{
+        height: 55vh;
+    }
+    }
+@media (max-width:400px){
+    .visina{
+        height: 45vh;
+    }
+    }
+@media(max-width:332px){
+    .card-body{
+        padding: 1rem 0;
+    }
+}
+    /******Scroll Button Code*******/
+
+.scrollup {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #6e6e6e;
+    text-align: center;
+    line-height: 45px;
+    font-size: 17px;
+    z-index: 100;
+    display: none;
+    border-radius: 25px;
+    opacity: 40%;
+}
+.scrollup:hover{
+    opacity: 100%;
+}
+

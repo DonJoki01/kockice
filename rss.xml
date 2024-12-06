@@ -1,0 +1,14 @@
+<rss version="2.0">
+<channel>
+<item>
+<title>Turnir Bang!</title>
+<link>https://jovanvukajlovic.github.io/Kockice/index.html</link>
+<description>Otvorene su prijave za turnir krajem aprila na našem sajtu.</description>
+</item>
+<item>
+<title>Igre na akciji</title>
+<link>https://jovanvukajlovic.github.io/Kockice/trending.html</link>
+<description>Popularni naslovi poput Nestabilnih jednoroga su sada na akciji!</description>
+</item>
+</channel>
+</rss>
