@@ -1,39 +1,3 @@
-const proizvodi = [
-  { ime: "Cyclades", zanr: "Fantazija", cena: "6,000", img: "cyclades.png" },
-  { ime: "Jednorozi", zanr: "Strategija", cena: "2,600", img: "jednorozi.png" },
-  { ime: "Gloomhaven", zanr: "Strategija", cena: "21,500", img: "gloom.png" },
-  { ime: "Ticket to ride", zanr: "Razvojna", cena: "3,200", img: "ticket.png" },
-  { ime: "Osvajač", zanr: "Strategija", cena: "1,100", img: "osvajac.png" },
-  { ime: "Voidfall", zanr: "Razvojna", cena: "15,000", img: "voidfall.png" },
-  { ime: "Wingspan", zanr: "Strategija", cena: "7,500", img: "wingspan.png" },
-  { ime: "Living Forest", zanr: "Razvojna", cena: "5,400", img: "forest.png" },
-  { ime: "Hues&Cues", zanr: "Co-op", cena: "4,000", img: "hues.png" },
-  { ime: "Azul", zanr: "Strategija", cena: "1,600", img: "azul.png" },
-  { ime: "Santorini", zanr: "Strategija", cena: "2,700", img: "santorini.png" },
-  {
-    ime: "Betrayal",
-    zanr: "Co-op",
-    cena: "6,800",
-    img: "betrayal-shop.png",
-  },
-  { ime: "Dixit", zanr: "Fantazija", cena: "4,100", img: "dixit.png" },
-  {
-    ime: "Mysterium",
-    zanr: "Co-op",
-    cena: "3,800",
-    img: "mysterium.png",
-  },
-  { ime: "Cascadia", zanr: "Strategija", cena: "5,500", img: "cascadia.png" },
-];
-
-const zanroviNiz = [
-  { ime: "Strategija", id: "strategija" },
-  { ime: "Fantazija", id: "fantazija" },
-  { ime: "Razvojna", id: "razvojna" },
-  { ime: "Co-op", id: "co-op" },
-  { ime: "Porodične", id: "porodicna" },
-  { ime: "Trivija", id: "trivija" },
-];
 
 let igre = document.querySelector("#igre");
 let zanrovi = document.querySelector("#zanrovi"); 

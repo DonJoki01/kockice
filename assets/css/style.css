@@ -77,12 +77,21 @@ body{
 .zelena{
     color: #58151c;
 }
-.zelenapozadina{
-    background-color: #0a3622;
+.beliokvir{
+    color: white;
+    background: rgba(10, 54, 34, 0.8);
+}
+.beliokvir:hover{
+    background: rgba(10, 54, 34, 1);
     color: white;
 }
 .zeleniokvir{
     border: 1px solid #0a3622;
+
+}
+.zeleniokvir:hover{
+    background-color: rgba(245, 245, 245,1);
+    
 }
 .crveniokvir{
     border: 1px solid #58151c;
@@ -200,6 +209,35 @@ body{
     clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
     opacity: 80%;
 }
+.rslides {
+    position: relative;
+    list-style: none;
+    overflow: hidden;
+    width: 80%;
+    padding: 0;
+    margin: 0;
+    }
+  
+  .rslides li {
+    -webkit-backface-visibility: hidden;
+    position: absolute;
+    display: none;
+    width: 80%;
+    }
+  
+  .rslides li:first-child {
+    position: relative;
+    display: block;
+    float: left;
+    }
+  
+  .rslides img {
+    display: block;
+    height: auto;
+    float: left;
+    width: 100%;
+    border: 0;
+    }
 @media (max-width:991px){
     .section-title{
         margin-top: 1rem;

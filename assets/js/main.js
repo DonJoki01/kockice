@@ -7,8 +7,46 @@
   const clanoviDodatniSadrzaj=[
     { putanja: "rss.xml", ikonica: "fa-rss", tekst: "Rss" },
     { putanja: "sitemap.xml", ikonica: "fa-sitemap", tekst: "Sitemap" },
-    { putanja: "#", ikonica: "fa-file", tekst: "Dokumentacija" },
+    { putanja: "dokumentacija.pdf", ikonica: "fa-file", tekst: "Dokumentacija" },
   ]
+  const proizvodi = [
+    { ime: "Cyclades", zanr: "Fantazija", cena: "6,000", img: "cyclades.png", popust:0 },
+    { ime: "Jednorozi", zanr: "Strategija", cena: "2,600", img: "jednorozi.png", popust:1 },
+    { ime: "Gloomhaven", zanr: "Strategija", cena: "21,500", img: "gloom.png", popust:0  },
+    { ime: "Ticket to ride", zanr: "Razvojna", cena: "3,200", img: "ticket.png", popust:0  },
+    { ime: "Osvajač", zanr: "Strategija", cena: "1,100", img: "osvajac.png", popust:0  },
+    { ime: "Voidfall", zanr: "Razvojna", cena: "15,000", img: "voidfall.png", popust:0  },
+    { ime: "Wingspan", zanr: "Strategija", cena: "7,500", img: "wingspan.png", popust:0  },
+    { ime: "Living Forest", zanr: "Razvojna", cena: "5,400", img: "forest.png", popust:1 },
+    { ime: "Hues&Cues", zanr: "Co-op", cena: "4,000", img: "hues.png", popust:1 },
+    { ime: "Azul", zanr: "Strategija", cena: "1,600", img: "azul.png", popust:0 },
+    { ime: "Santorini", zanr: "Strategija", cena: "2,700", img: "santorini.png", popust:1 },
+    {
+      ime: "Betrayal",
+      zanr: "Co-op",
+      cena: "6,800",
+      img: "betrayal-shop.png",
+      popust:0 
+    },
+    { ime: "Dixit", zanr: "Fantazija", cena: "4,100", img: "dixit.png", popust:0  },
+    {
+      ime: "Mysterium",
+      zanr: "Co-op",
+      cena: "3,800",
+      img: "mysterium.png", popust:0 
+    },
+    { ime: "Cascadia", zanr: "Strategija", cena: "5,500", img: "cascadia.png", popust:0  },
+  ];
+  
+  const zanroviNiz = [
+    { ime: "Strategija", id: "strategija" },
+    { ime: "Fantazija", id: "fantazija" },
+    { ime: "Razvojna", id: "razvojna" },
+    { ime: "Co-op", id: "co-op" },
+    { ime: "Porodične", id: "porodicna" },
+    { ime: "Trivija", id: "trivija" },
+  ];
+  
   let header = document.querySelector("nav")
   header.innerHTML=`<div class="container-fluid">
         <a class="navbar-brand mx-lg-5 p-1 fs-1" href="index.html"
@@ -123,7 +161,7 @@
     let footerDodatniSadrzaj= ''
     for (const clan of clanoviDodatniSadrzaj){
         footerDodatniSadrzaj +=`<li class="nav-item mb-2">
-                    <a href="${clan.putanja}" class="nav-link p-0 text-muted">${clan.tekst}</a>
+                    <a href="${clan.putanja}" target="_blank" class="nav-link p-0 text-muted">${clan.tekst}</a>
                   </li>`}
     dodatniLinkovi.innerHTML = footerDodatniSadrzaj
 

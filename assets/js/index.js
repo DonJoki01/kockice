@@ -73,3 +73,6 @@ prijavaTurnir.addEventListener("click", function(){
   netacnaValidacija(ime,imeRegex)
   netacnaValidacija(email,emailRegex)
 })
+  $(function() {
+    $(".rslides").responsiveSlides();
+  });
